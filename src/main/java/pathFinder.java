@@ -72,7 +72,6 @@ public class pathFinder {
                 while (index<sourcePath.length && index<destinationPath.length
                         && sourcePath[index].equalsIgnoreCase(destinationPath[index])) {
                     index++;
-                    System.out.println("First While:"+index);
                 }
                 pathsDivergeAt = index - 1;
 
@@ -80,7 +79,6 @@ public class pathFinder {
                 while (index<sourcePath.length
                         && !sourcePath[index].equalsIgnoreCase(source)) {
                     index++;
-                    System.out.println("Second While:"+index);
                 }
                 indexOfSource = index;
 
@@ -100,17 +98,17 @@ public class pathFinder {
 
 
         //print the path from source until the diverging point walking back towards the path-origin i.e Estate
-        for(index=indexOfSourceInOptimalSourcePath;index>optimalPathsDivergeAt && index<optimalSourcePath.length;index--) {
+        /*for(index=indexOfSourceInOptimalSourcePath;index>optimalPathsDivergeAt && index<optimalSourcePath.length;index--) {
             System.out.print(optimalSourcePath[index] + " -> ");
         }
         //print the path on the destination path beginning at the diverging point until the destination
         for(index=optimalPathsDivergeAt;index<optimalDestinationPath.length;index++) {
             System.out.print(optimalDestinationPath[index] + " -> ");
-        }
-        System.out.println(destination);
+        }*/
+        //System.out.println(destination);
 
 
-        System.out.print("You are in " + source + ".");
+        System.out.println("You are in " + source + ".");
         if(!source.equalsIgnoreCase(optimalSourcePath[optimalPathsDivergeAt])) {
             //print the path from source until the diverging point walking back towards the path-origin i.e Estate
             for (index = indexOfSourceInOptimalSourcePath - 1; index > optimalPathsDivergeAt; index--) {
